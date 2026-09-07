@@ -6,6 +6,13 @@ All materials are categorized into dedicated folders and cross-referenced module
 
 ---
 
+## Official Course Resources
+
+- 📁 **AML Notes & Worksheets (Google Drive)**: [Google Drive Folder](https://drive.google.com/drive/u/2/folders/1L7aVVAE6_WF0m2sMKjc1BR6zBrrlQnLa)
+- 🐙 **AML Lab Questions (GitHub Repo)**: [gourabrajak-cloud/aml_lab](https://github.com/gourabrajak-cloud/aml_lab)
+
+---
+
 ### Directory Structure
 
 ```text
@@ -149,8 +156,8 @@ AML/
 | Category | File | Description |
 | :--- | :--- | :--- |
 | **Worksheets** | [Worksheet_03_Simple_Linear_Regression_OLS_Teacher_Copy.pdf](02_Worksheets/Worksheet_03_Simple_Linear_Regression_OLS_Teacher_Copy.pdf) | Complete mathematical OLS derivation from scatter plots to best-fit lines |
-| **Student Solution** | [Lab_03_student_notebook.ipynb](04_Notebooks/Lab_03_Simple_Linear_Regression_OLS/Student_Solution/Lab_03_student_notebook.ipynb) | Student implementation of `slr_ols_todo.py` and regression experiments |
-| **Solved Reference** | [Lab_03 Solved Reference](04_Notebooks/Lab_03_Simple_Linear_Regression_OLS/Solved_Reference/) | Instructor's reference implementation and completed notebook |
+| **Solved Notebook** | [Lab_3_student_notebook.ipynb](04_Notebooks/Lab_03_Simple_Linear_Regression_OLS/solved/Lab_3_student_notebook.ipynb) | Solved notebook with 24 execution outputs and Jupyter tracking intact |
+| **Raw Assignment** | [Lab_3 Raw Question](04_Notebooks/Lab_03_Simple_Linear_Regression_OLS/raw/) | Clean unmodified question set directly from upstream GitHub |
 
 ---
 
@@ -160,8 +167,8 @@ AML/
 | Category | File | Description |
 | :--- | :--- | :--- |
 | **Worksheets** | [Worksheet_04_Multiple_Linear_Regression_OLS.pdf](02_Worksheets/Worksheet_04_Multiple_Linear_Regression_OLS.pdf) | Matrix formulation, normal equations, and multiple feature interactions |
-| **Student Solution** | [Lab_04_student_notebook.ipynb](04_Notebooks/Lab_04_Multiple_Linear_Regression_OLS/Student_Solution/Lab_04_student_notebook.ipynb) | Student implementation of `mlr_ols_todo.py` for multivariate regression |
-| **Solved Reference** | [Lab_04_Complete.ipynb](04_Notebooks/Lab_04_Multiple_Linear_Regression_OLS/Solved_Reference/Lab_4_Complete.ipynb) | Instructor's complete multivariate regression solution and code |
+| **Solved Notebook** | [Lab_4_student_notebook.ipynb](04_Notebooks/Lab_04_Multiple_Linear_Regression_OLS/solved/Lab_4_student_notebook.ipynb) | Solved notebook with 26 execution outputs and `mlr_ols_todo.py` solution |
+| **Raw Assignment** | [Lab_4 Raw Question](04_Notebooks/Lab_04_Multiple_Linear_Regression_OLS/raw/) | Clean unmodified question set directly from upstream GitHub |
 
 ---
 
@@ -171,8 +178,8 @@ AML/
 | Category | File | Description |
 | :--- | :--- | :--- |
 | **Worksheets** | [Worksheet_05_Batch_Gradient_Descent_MLR.pdf](02_Worksheets/Worksheet_05_Batch_Gradient_Descent_MLR.pdf) | Deriving gradients, learning rate selection, and iterative weight updates |
-| **Student Solution** | [Lab_05_Final_BGD_MLR_student_todo.ipynb](04_Notebooks/Lab_05_Batch_Gradient_Descent_MLR/Student_Solution/Lab_05_Final_BGD_MLR_student_todo.ipynb) | Student implementation of `mlr_gradient_descent.py` and convergence checks |
-| **Solved Reference** | [Lab_05 Solved Reference](04_Notebooks/Lab_05_Batch_Gradient_Descent_MLR/Solved_Reference/) | Instructor's verified gradient descent code and convergence graphs |
+| **Solved Notebook** | [Lab_5_Final_BGD_MLR_student_todo.ipynb](04_Notebooks/Lab_05_Batch_Gradient_Descent_MLR/solved/Lab_5_Final_BGD_MLR_student_todo.ipynb) | Solved notebook with 21 execution outputs and `mlr_gradient_descent.py` |
+| **Raw Assignment** | [Lab_5 Raw Question](04_Notebooks/Lab_05_Batch_Gradient_Descent_MLR/raw/) | Clean unmodified question set directly from upstream GitHub |
 
 ---
 
@@ -183,8 +190,8 @@ AML/
 | :--- | :--- | :--- |
 | **Interactive Lecture** | [Module_06_Gradient_Descent_Interactive_Lecture.html](03_HTML_Visualizations/Module_06_Gradient_Descent_Interactive_Lecture.html) | Interactive 3D and 2D loss surface visualizer comparing Batch GD, SGD, and Mini-batch |
 | **Worksheets** | [Worksheet_06_Optimizers_With_Memory.pdf](02_Worksheets/Worksheet_06_Optimizers_With_Memory.pdf) | Optimization worksheet covering memory, momentum, and adaptive rates |
-| **Student Solution** | [Lab_06_Final_BGD_MLR_student_todo.ipynb](04_Notebooks/Lab_06_MiniBatch_SGD_MLR/Student_Solution/Lab_06_Final_BGD_MLR_student_todo.ipynb) | Student solution for mini-batch SGD implementation (`mlr_gradient_descent_minibatch.py`) |
-| **Template** | [Lab_06 Template](04_Notebooks/Lab_06_MiniBatch_SGD_MLR/Template/) | Clean starter code and dataflow architecture diagram (`dfd.png`) |
+| **Solved Notebook** | [Lab_6_Final_BGD_MLR_student_todo.ipynb](04_Notebooks/Lab_06_MiniBatch_SGD_MLR/solved/Lab_6_Final_BGD_MLR_student_todo.ipynb) | Solved mini-batch SGD notebook with 16 outputs and `mlr_gradient_descent_minibatch.py` |
+| **Raw Assignment** | [Lab_6 Raw Question](04_Notebooks/Lab_06_MiniBatch_SGD_MLR/raw/) | Clean unmodified question set directly from upstream GitHub |
 
 ---
 
@@ -194,7 +201,8 @@ AML/
 | Category | File | Description |
 | :--- | :--- | :--- |
 | **Interactive Worksheet** | [Module_07_Momentum_and_NAG_Interactive_Worksheet.html](03_HTML_Visualizations/Module_07_Momentum_and_NAG_Interactive_Worksheet.html) | Interactive simulation of EWMA, SGD with Momentum, and Nesterov Accelerated Gradient |
-| **Notebooks** | [Lab_07_Student_Performance_and_Placement.ipynb](04_Notebooks/Lab_07_Student_Performance_and_Placement/Lab_07_Student_Performance_and_Placement.ipynb) | End-to-end story notebook analyzing student factors, performance metrics, and placement |
+| **Solved Notebook** | [lab_7_St_c.ipynb](04_Notebooks/Lab_07_Student_Performance_and_Placement/solved/lab_7_St_c.ipynb) | Working notebook ready for solving with tracking intact |
+| **Raw Assignment** | [Lab_7 Raw Question](04_Notebooks/Lab_07_Student_Performance_and_Placement/raw/) | Clean unmodified question set directly from upstream GitHub |
 
 ---
 
