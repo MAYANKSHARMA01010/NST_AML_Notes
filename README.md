@@ -42,15 +42,13 @@ AML/
 │   │   │   ├── student_raw_dataset.csv
 │   │   │   ├── requirements.txt
 │   │   │   └── README.md
-│   │   └── solved/                    # Your executed solution & Jupyter checkpoints
-│   │       ├── Lab_03_student_notebook.ipynb (24 outputs, tracking intact)
-│   │       ├── Teacher_Reference_Solved.ipynb
+│   │   └── solved/                    # Your solved version & Jupyter checkpoints
+│   │       ├── .ipynb_checkpoints/
+│   │       ├── Lab_3_student_notebook.ipynb (24 outputs, tracking intact)
 │   │       ├── slr_ols_todo.py (your solved implementation)
-│   │       ├── slr_ols_reference.py
 │   │       ├── student_clean_dataset.csv
 │   │       ├── student_raw_dataset.csv
-│   │       ├── requirements.txt
-│   │       └── .ipynb_checkpoints/
+│   │       └── requirements.txt
 │   ├── Lab_04_Multiple_Linear_Regression_OLS/
 │   │   ├── raw/                       # Exact question from GitHub (untouched)
 │   │   │   ├── Lab_4_student_notebook.ipynb
@@ -59,15 +57,13 @@ AML/
 │   │   │   ├── student_raw_dataset.csv
 │   │   │   ├── requirements.txt
 │   │   │   └── README.md
-│   │   └── solved/                    # Your executed solution & Jupyter checkpoints
-│   │       ├── Lab_04_student_notebook.ipynb (26 outputs, tracking intact)
-│   │       ├── Teacher_Reference_Solved.ipynb
+│   │   └── solved/                    # Your solved version & Jupyter checkpoints
+│   │       ├── .ipynb_checkpoints/
+│   │       ├── Lab_4_student_notebook.ipynb (26 outputs, tracking intact)
 │   │       ├── mlr_ols_todo.py (your solved implementation)
-│   │       ├── mlr_ols_reference.py
 │   │       ├── student_clean_dataset.csv
 │   │       ├── student_raw_dataset.csv
-│   │       ├── requirements.txt
-│   │       └── .ipynb_checkpoints/
+│   │       └── requirements.txt
 │   ├── Lab_05_Batch_Gradient_Descent_MLR/
 │   │   ├── raw/                       # Exact question from GitHub (untouched)
 │   │   │   ├── Lab_5_Final_BGD_MLR_student_todo.ipynb
@@ -78,16 +74,15 @@ AML/
 │   │   │   ├── student_clean_dataset.csv
 │   │   │   ├── requirements.txt
 │   │   │   └── README.md
-│   │   └── solved/                    # Your executed solution & Jupyter checkpoints
+│   │   └── solved/                    # Your solved version & Jupyter checkpoints
+│   │       ├── .ipynb_checkpoints/
 │   │       ├── Lab_5_Final_BGD_MLR_student_todo.ipynb (21 outputs, tracking intact)
-│   │       ├── Teacher_Reference_Solved.ipynb
-│   │       ├── mlr_gradient_descent.py (your solved implementation)
-│   │       ├── gradient_descent.py
-│   │       ├── slr_ols_student.py
 │   │       ├── MLR_Gradient_Descent_Student_TODO.txt
+│   │       ├── gradient_descent.py
+│   │       ├── mlr_gradient_descent.py (your solved implementation)
+│   │       ├── slr_ols_student.py
 │   │       ├── student_clean_dataset.csv
-│   │       ├── requirements.txt
-│   │       └── .ipynb_checkpoints/
+│   │       └── requirements.txt
 │   ├── Lab_06_MiniBatch_SGD_MLR/
 │   │   ├── raw/                       # Exact question from GitHub (untouched)
 │   │   │   ├── Lab_6_Final_BGD_MLR_student_todo.ipynb
@@ -96,23 +91,21 @@ AML/
 │   │   │   ├── student_clean_dataset.csv
 │   │   │   ├── requirements.txt
 │   │   │   └── README.md
-│   │   └── solved/                    # Your executed solution & Jupyter checkpoints
+│   │   └── solved/                    # Your solved version & Jupyter checkpoints
+│   │       ├── .ipynb_checkpoints/
 │   │       ├── Lab_6_Final_BGD_MLR_student_todo.ipynb (16 outputs, tracking intact)
-│   │       ├── mlr_gradient_descent_minibatch.py (your solved implementation)
 │   │       ├── dfd.png
+│   │       ├── mlr_gradient_descent_minibatch.py (your solved implementation)
 │   │       ├── student_clean_dataset.csv
-│   │       ├── requirements.txt
-│   │       └── .ipynb_checkpoints/
+│   │       └── requirements.txt
 │   └── Lab_07_Student_Performance_and_Placement/
 │       ├── raw/                       # Exact question from GitHub (untouched)
 │       │   ├── lab_7_St_c.ipynb
-│       │   ├── student_raw_dataset.csv
-│       │   └── requirements.txt
-│       └── solved/                    # Ready to solve in Jupyter with tracking (.ipynb_checkpoints)
+│       │   └── student_raw_dataset.csv
+│       └── solved/                    # Ready to solve in Jupyter with tracking
+│           ├── .ipynb_checkpoints/
 │           ├── lab_7_St_c.ipynb
-│           ├── student_raw_dataset.csv
-│           ├── requirements.txt
-│           └── .ipynb_checkpoints/
+│           └── student_raw_dataset.csv
 └── .upstream/                         # Hidden git mirror for aml_lab (used by sync_labs.sh)
 ```
 
