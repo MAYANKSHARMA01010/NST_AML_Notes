@@ -10,21 +10,17 @@ echo "=========================================================="
 echo "    Syncing Labs from Upstream (gourabrajak-cloud/aml_lab)  "
 echo "=========================================================="
 
-# 1. Determine upstream location (support hidden .upstream/aml_lab)
-if [ -d ".upstream/aml_lab/.git" ]; then
-    UPSTREAM_DIR=".upstream/aml_lab"
-elif [ -d "aml_lab/.git" ]; then
-    UPSTREAM_DIR="aml_lab"
-else
-    UPSTREAM_DIR=".upstream/aml_lab"
+# 1. Determine upstream location (hidden in .upstream/aml_lab)
+UPSTREAM_DIR=".upstream/aml_lab"
+if [ ! -d "${UPSTREAM_DIR}/.git" ]; then
     echo "==> Cloning upstream repository https://github.com/gourabrajak-cloud/aml_lab.git..."
     git clone https://github.com/gourabrajak-cloud/aml_lab.git "${UPSTREAM_DIR}"
+else
+    echo "==> Pulling latest updates in ${UPSTREAM_DIR}..."
+    git -C "${UPSTREAM_DIR}" pull origin main
 fi
 
-echo "==> Pulling latest updates in ${UPSTREAM_DIR}..."
-git -C "${UPSTREAM_DIR}" pull origin main
-
-# 2. Run clean sync logic via Python
+# 2. Run sync logic via Python
 "${ROOT_DIR}/.venv/bin/python" - << EOF
 import os, shutil, glob, re
 
@@ -61,43 +57,42 @@ for lab in lab_dirs:
         os.makedirs(target_lab_dir, exist_ok=True)
         print(f"==> Created new lab folder: {os.path.relpath(target_lab_dir, ROOT)}")
 
-    # Copy lab-specific requirements.txt if present and not already existing
-    req_src = os.path.join(lab_src, "requirements.txt")
-    req_dst = os.path.join(target_lab_dir, "requirements.txt")
-    if os.path.exists(req_src) and not os.path.exists(req_dst):
-        shutil.copy2(req_src, req_dst)
-        print(f"    [Requirements added] requirements.txt in {os.path.relpath(target_lab_dir, ROOT)}")
+    raw_dir = os.path.join(target_lab_dir, "raw")
+    solved_dir = os.path.join(target_lab_dir, "solved")
+    os.makedirs(raw_dir, exist_ok=True)
+    os.makedirs(solved_dir, exist_ok=True)
+    os.makedirs(os.path.join(solved_dir, ".ipynb_checkpoints"), exist_ok=True)
 
-    # Copy datasets, text prompts, diagrams into target lab directory directly (NO subdirectories)
-    for ext in ["*.csv", "*.txt", "*.png", "*.jpg", "*.svg"]:
-        for asset in glob.glob(os.path.join(lab_src, "**/" + ext), recursive=True):
-            fname = os.path.basename(asset)
-            dst = os.path.join(target_lab_dir, fname)
-            if not os.path.exists(dst):
-                shutil.copy2(asset, dst)
-                print(f"    [Asset copied] {fname} -> {os.path.relpath(target_lab_dir, ROOT)}")
+    # Locate raw template directory in upstream (e.g. Lab_X_Student_copy, Lab_X_Student_todo, or lab root)
+    subdirs = [d for d in os.listdir(lab_src) if os.path.isdir(os.path.join(lab_src, d)) and "student" in d.lower()]
+    raw_source_dir = os.path.join(lab_src, subdirs[0]) if subdirs else lab_src
 
-    # Copy newly assigned starter notebook if no notebook exists in target_lab_dir
-    existing_nbs = [f for f in os.listdir(target_lab_dir) if f.endswith(".ipynb")]
-    if not existing_nbs:
-        for nb in glob.glob(os.path.join(lab_src, "*.ipynb")):
-            fname = os.path.basename(nb)
-            dst_nb = os.path.join(target_lab_dir, fname)
-            shutil.copy2(nb, dst_nb)
-            print(f"    [New assignment notebook copied] {fname} -> {os.path.relpath(target_lab_dir, ROOT)}")
+    # 1. Update raw/ with untouched files from upstream
+    for f in os.listdir(raw_source_dir):
+        src_file = os.path.join(raw_source_dir, f)
+        if os.path.isfile(src_file):
+            shutil.copy2(src_file, os.path.join(raw_dir, f))
 
-    # Check for solved reference notebook and copy directly with _Solved suffix if missing
+    # 2. If solved/ is empty, initialize it with the starter files ready to work on
+    existing_solved_files = [f for f in os.listdir(solved_dir) if not f.startswith(".")]
+    if not existing_solved_files:
+        for f in os.listdir(raw_dir):
+            src_file = os.path.join(raw_dir, f)
+            if os.path.isfile(src_file):
+                shutil.copy2(src_file, os.path.join(solved_dir, f))
+        print(f"    [Initialized solved/] for {os.path.basename(target_lab_dir)}")
+
+    # 3. Check for teacher solved reference and copy if available
     for item in os.listdir(lab_src):
         if "solved" in item.lower():
-            solved_src = os.path.join(lab_src, item)
-            if os.path.isdir(solved_src):
-                for sf in os.listdir(solved_src):
+            solved_source_dir = os.path.join(lab_src, item)
+            if os.path.isdir(solved_source_dir):
+                for sf in os.listdir(solved_source_dir):
                     if sf.endswith(".ipynb"):
-                        solved_name = f"{lab_str}_Solved_{sf}" if "solved" not in sf.lower() else sf
-                        dst_solved = os.path.join(target_lab_dir, solved_name)
-                        if not os.path.exists(dst_solved) and not any("solved" in existing.lower() for existing in existing_nbs):
-                            shutil.copy2(os.path.join(solved_src, sf), dst_solved)
-                            print(f"    [Reference solution copied] {solved_name}")
+                        ref_dst = os.path.join(solved_dir, "Teacher_Reference_Solved.ipynb")
+                        if not os.path.exists(ref_dst):
+                            shutil.copy2(os.path.join(solved_source_dir, sf), ref_dst)
+                            print(f"    [Teacher reference added] Teacher_Reference_Solved.ipynb")
 
 print("\n==> Sync check complete.")
 EOF
