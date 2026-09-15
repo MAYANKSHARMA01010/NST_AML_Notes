@@ -25,14 +25,16 @@ AML/
 │   └── sync_labs.sh                   # Upstream pull script for new assignments & questions
 ├── 01_Notes/                          # Lecture notes and foundational reference guides
 │   └── AML_Foundations_Lecture_0_Guide.pdf
-├── 02_Worksheets/                     # Theoretical & practical worksheets (Lectures 00 to 06)
+├── 02_Worksheets/                     # Theoretical & practical worksheets (Lectures 00 to 08)
 │   ├── Worksheet_00_Foundations_From_Code_to_Learning.pdf
 │   ├── Worksheet_01_ML_Project_Lifecycle_EDA_and_Preprocessing.pdf
 │   ├── Worksheet_02_ML_Project_Lifecycle_Feature_Engineering_and_Evaluation.pdf
 │   ├── Worksheet_03_Simple_Linear_Regression_OLS_Teacher_Copy.pdf
 │   ├── Worksheet_04_Multiple_Linear_Regression_OLS.pdf
 │   ├── Worksheet_05_Batch_Gradient_Descent_MLR.pdf
-│   └── Worksheet_06_Optimizers_With_Memory.pdf
+│   ├── Worksheet_06_Stochastic_and_MiniBatch_Gradient_Descent.pdf
+│   ├── Worksheet_07_Regression_and_Classification_Evaluation_Metrics.pdf
+│   └── Worksheet_08_Polynomial_Regression_and_Assumptions.pdf
 ├── 03_HTML_Visualizations/            # Interactive browser-based learning explorables
 │   ├── Module_06_Gradient_Descent_Interactive_Lecture.html
 │   └── Module_07_Momentum_and_NAG_Interactive_Worksheet.html
@@ -210,8 +212,8 @@ AML/
 
 | Category | File | Description |
 | :--- | :--- | :--- |
+| **Worksheets** | [Worksheet_06_Stochastic_and_MiniBatch_Gradient_Descent.pdf](02_Worksheets/Worksheet_06_Stochastic_and_MiniBatch_Gradient_Descent.pdf) | Stochastic & mini-batch gradient descent derivation, update mechanics, and batch sizing |
 | **Interactive Lecture** | [Module_06_Gradient_Descent_Interactive_Lecture.html](03_HTML_Visualizations/Module_06_Gradient_Descent_Interactive_Lecture.html) | Interactive 3D and 2D loss surface visualizer comparing Batch GD, SGD, and Mini-batch |
-| **Worksheets** | [Worksheet_06_Optimizers_With_Memory.pdf](02_Worksheets/Worksheet_06_Optimizers_With_Memory.pdf) | Optimization worksheet covering memory, momentum, and adaptive rates |
 | **Solved Notebook** | [Lab_6_Final_BGD_MLR_student_todo.ipynb](04_Notebooks/Lab_06_MiniBatch_SGD_MLR/solved/Lab_6_Final_BGD_MLR_student_todo.ipynb) | Solved mini-batch SGD notebook with 16 outputs and `mlr_gradient_descent_minibatch.py` |
 | **Raw Assignment** | [Lab_6 Raw Question](04_Notebooks/Lab_06_MiniBatch_SGD_MLR/raw/) | Clean unmodified question set directly from upstream GitHub |
 
@@ -222,6 +224,7 @@ AML/
 
 | Category | File | Description |
 | :--- | :--- | :--- |
+| **Worksheets** | [Worksheet_07_Regression_and_Classification_Evaluation_Metrics.pdf](02_Worksheets/Worksheet_07_Regression_and_Classification_Evaluation_Metrics.pdf) | Regression & classification metrics (Residuals, MAE, MAPE, MSE, RMSE, R², Adjusted R², Confusion Matrix, F1) |
 | **Interactive Worksheet** | [Module_07_Momentum_and_NAG_Interactive_Worksheet.html](03_HTML_Visualizations/Module_07_Momentum_and_NAG_Interactive_Worksheet.html) | Interactive simulation of EWMA, SGD with Momentum, and Nesterov Accelerated Gradient |
 | **Solved Notebook** | [lab_7_St_c.ipynb](04_Notebooks/Lab_07_Student_Performance_and_Placement/solved/lab_7_St_c.ipynb) | Working notebook ready for solving with tracking intact |
 | **Raw Assignment** | [Lab_7 Raw Question](04_Notebooks/Lab_07_Student_Performance_and_Placement/raw/) | Clean unmodified question set directly from upstream GitHub |
@@ -233,6 +236,7 @@ AML/
 
 | Category | File | Description |
 | :--- | :--- | :--- |
+| **Worksheets** | [Worksheet_08_Polynomial_Regression_and_Assumptions.pdf](02_Worksheets/Worksheet_08_Polynomial_Regression_and_Assumptions.pdf) | Polynomial regression, nonlinear mappings, overfitting, and the five linear regression assumptions |
 | **Solved Notebook (OLS)** | [poly_using_ols_manual.ipynb](04_Notebooks/Lab_08_Polynomial_Regression/solved/poly_using_ols_manual.ipynb) | Manual OLS implementation for polynomial models with `poly_ols.py` |
 | **Solved Notebook (GD)** | [Poly_using_gradient_final.ipynb](04_Notebooks/Lab_08_Polynomial_Regression/solved/Poly_using_gradient_final.ipynb) | Gradient descent optimization for polynomial regression with `poly_gradient.py` |
 | **Raw Assignment** | [Lab_8 Raw Question](04_Notebooks/Lab_08_Polynomial_Regression/raw/) | Clean unmodified question set directly from upstream GitHub |
