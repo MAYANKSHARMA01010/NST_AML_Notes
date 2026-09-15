@@ -52,8 +52,32 @@ for lab in lab_dirs:
     if matches:
         target_lab_dir = os.path.join(NOTEBOOKS_DIR, matches[0])
     else:
-        lab_name_clean = lab.replace("_", " ").title().replace(" ", "_")
-        target_lab_dir = os.path.join(NOTEBOOKS_DIR, f"{lab_str}_{lab_name_clean}")
+        # Infer meaningful topic name if possible
+        topic = ""
+        # Check subdirectories (e.g. Lab_8_polynomial_student -> Polynomial_Regression)
+        for sub in os.listdir(lab_src):
+            if os.path.isdir(os.path.join(lab_src, sub)):
+                clean_sub = re.sub(r"^Lab_\d+_", "", sub, flags=re.IGNORECASE)
+                clean_sub = re.sub(r"_(student|todo|copy)", "", clean_sub, flags=re.IGNORECASE)
+                if clean_sub:
+                    topic = clean_sub.title().replace(" ", "_")
+                    break
+        if not topic:
+            # Check notebook files in lab_src
+            for root_w, _, files_w in os.walk(lab_src):
+                for fw in files_w:
+                    if fw.endswith(".ipynb") and not fw.startswith("."):
+                        clean_fn = re.sub(r"^Lab_\d+_", "", fw.replace(".ipynb", ""), flags=re.IGNORECASE)
+                        clean_fn = re.sub(r"_(student|todo|copy|final)", "", clean_fn, flags=re.IGNORECASE)
+                        if clean_fn:
+                            topic = clean_fn.title().replace(" ", "_")
+                            break
+                if topic:
+                    break
+        if not topic:
+            topic = f"Lab_{lab_num}"
+
+        target_lab_dir = os.path.join(NOTEBOOKS_DIR, f"{lab_str}_{topic}")
         os.makedirs(target_lab_dir, exist_ok=True)
         print(f"==> Created new lab folder: {os.path.relpath(target_lab_dir, ROOT)}")
 
@@ -81,18 +105,6 @@ for lab in lab_dirs:
             if os.path.isfile(src_file):
                 shutil.copy2(src_file, os.path.join(solved_dir, f))
         print(f"    [Initialized solved/] for {os.path.basename(target_lab_dir)}")
-
-    # 3. Check for teacher solved reference and copy if available
-    for item in os.listdir(lab_src):
-        if "solved" in item.lower():
-            solved_source_dir = os.path.join(lab_src, item)
-            if os.path.isdir(solved_source_dir):
-                for sf in os.listdir(solved_source_dir):
-                    if sf.endswith(".ipynb"):
-                        ref_dst = os.path.join(solved_dir, "Teacher_Reference_Solved.ipynb")
-                        if not os.path.exists(ref_dst):
-                            shutil.copy2(os.path.join(solved_source_dir, sf), ref_dst)
-                            print(f"    [Teacher reference added] Teacher_Reference_Solved.ipynb")
 
 print("\n==> Sync check complete.")
 EOF

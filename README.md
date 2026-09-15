@@ -105,14 +105,36 @@ AML/
 │   │       ├── mlr_gradient_descent_minibatch.py (your solved implementation)
 │   │       ├── student_clean_dataset.csv
 │   │       └── requirements.txt
-│   └── Lab_07_Student_Performance_and_Placement/
+│   ├── Lab_07_Student_Performance_and_Placement/
+│   │   ├── raw/                       # Exact question from GitHub (untouched)
+│   │   │   ├── lab_7_St_c.ipynb
+│   │   │   └── student_raw_dataset.csv
+│   │   └── solved/                    # Ready to solve in Jupyter with tracking
+│   │       ├── .ipynb_checkpoints/
+│   │       ├── lab_7_St_c.ipynb
+│   │       └── student_raw_dataset.csv
+│   ├── Lab_08_Polynomial_Regression/
+│   │   ├── raw/                       # Exact question from GitHub (untouched)
+│   │   │   ├── Poly_using_gradient_final.ipynb
+│   │   │   ├── poly_using_ols_manual.ipynb
+│   │   │   ├── poly_gradient.py
+│   │   │   └── poly_ols.py
+│   │   └── solved/                    # Ready to solve in Jupyter with tracking
+│   │       ├── .ipynb_checkpoints/
+│   │       ├── Poly_using_gradient_final.ipynb
+│   │       ├── poly_using_ols_manual.ipynb
+│   │       ├── poly_gradient.py
+│   │       └── poly_ols.py
+│   └── Lab_09_Bias_Variance_Tradeoff/
 │       ├── raw/                       # Exact question from GitHub (untouched)
-│       │   ├── lab_7_St_c.ipynb
-│       │   └── student_raw_dataset.csv
+│       │   ├── Lab_9_Bias_Variance.ipynb
+│       │   ├── academic_outcomes.csv
+│       │   └── bias_variance_tools.py
 │       └── solved/                    # Ready to solve in Jupyter with tracking
 │           ├── .ipynb_checkpoints/
-│           ├── lab_7_St_c.ipynb
-│           └── student_raw_dataset.csv
+│           ├── Lab_9_Bias_Variance.ipynb
+│           ├── academic_outcomes.csv
+│           └── bias_variance_tools.py
 └── .upstream/                         # Hidden git mirror for aml_lab (used by sync_labs.sh)
 ```
 
@@ -203,6 +225,28 @@ AML/
 | **Interactive Worksheet** | [Module_07_Momentum_and_NAG_Interactive_Worksheet.html](03_HTML_Visualizations/Module_07_Momentum_and_NAG_Interactive_Worksheet.html) | Interactive simulation of EWMA, SGD with Momentum, and Nesterov Accelerated Gradient |
 | **Solved Notebook** | [lab_7_St_c.ipynb](04_Notebooks/Lab_07_Student_Performance_and_Placement/solved/lab_7_St_c.ipynb) | Working notebook ready for solving with tracking intact |
 | **Raw Assignment** | [Lab_7 Raw Question](04_Notebooks/Lab_07_Student_Performance_and_Placement/raw/) | Clean unmodified question set directly from upstream GitHub |
+
+---
+
+### Module 8: Polynomial Regression (OLS Manual & Gradient Descent)
+*Nonlinear feature transformations, higher-degree polynomial feature matrices, closed-form manual OLS implementation vs. gradient descent optimization on polynomials.*
+
+| Category | File | Description |
+| :--- | :--- | :--- |
+| **Solved Notebook (OLS)** | [poly_using_ols_manual.ipynb](04_Notebooks/Lab_08_Polynomial_Regression/solved/poly_using_ols_manual.ipynb) | Manual OLS implementation for polynomial models with `poly_ols.py` |
+| **Solved Notebook (GD)** | [Poly_using_gradient_final.ipynb](04_Notebooks/Lab_08_Polynomial_Regression/solved/Poly_using_gradient_final.ipynb) | Gradient descent optimization for polynomial regression with `poly_gradient.py` |
+| **Raw Assignment** | [Lab_8 Raw Question](04_Notebooks/Lab_08_Polynomial_Regression/raw/) | Clean unmodified question set directly from upstream GitHub |
+
+---
+
+### Module 9: Bias-Variance Tradeoff & Model Complexity
+*Understanding overfitting vs. underfitting across model degrees, decomposing expected prediction error into bias², variance, and irreducible noise, and empirical evaluation.*
+
+| Category | File | Description |
+| :--- | :--- | :--- |
+| **Solved Notebook** | [Lab_9_Bias_Variance.ipynb](04_Notebooks/Lab_09_Bias_Variance_Tradeoff/solved/Lab_9_Bias_Variance.ipynb) | In-depth bias-variance decomposition notebook with `bias_variance_tools.py` |
+| **Dataset** | [academic_outcomes.csv](04_Notebooks/Lab_09_Bias_Variance_Tradeoff/solved/academic_outcomes.csv) | Academic performance dataset for bias-variance complexity curves |
+| **Raw Assignment** | [Lab_9 Raw Question](04_Notebooks/Lab_09_Bias_Variance_Tradeoff/raw/) | Clean unmodified question set directly from upstream GitHub |
 
 ---
 
