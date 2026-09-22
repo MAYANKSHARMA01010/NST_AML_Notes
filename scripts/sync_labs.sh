@@ -21,7 +21,12 @@ else
 fi
 
 # 2. Run sync logic via Python
-"${ROOT_DIR}/.venv/bin/python" - << EOF
+PYTHON_BIN="${ROOT_DIR}/.venv/bin/python"
+if [ ! -f "${PYTHON_BIN}" ]; then
+    PYTHON_BIN="$(which python3)"
+fi
+
+"${PYTHON_BIN}" - << EOF
 import os, shutil, glob, re
 
 ROOT = os.path.abspath(".")
@@ -31,6 +36,13 @@ NOTEBOOKS_DIR = os.path.join(ROOT, "04_Notebooks")
 if not os.path.isdir(UPSTREAM):
     print("Upstream directory not found.")
     exit(0)
+
+KNOWN_TOPICS = {
+    8: "Polynomial_Regression",
+    9: "Bias_Variance_Tradeoff",
+    10: "Feature_Selection",
+    11: "PCA_Dimensionality_Reduction"
+}
 
 # Scan for Lab directories in upstream (e.g. Lab_3, Lab_4, Lab_5, Lab_6, Lab_7, Lab_8, etc.)
 lab_dirs = sorted([d for d in os.listdir(UPSTREAM) if re.match(r"^Lab_\d+", d, re.IGNORECASE)])
@@ -52,23 +64,25 @@ for lab in lab_dirs:
     if matches:
         target_lab_dir = os.path.join(NOTEBOOKS_DIR, matches[0])
     else:
-        # Infer meaningful topic name if possible
-        topic = ""
-        # Check subdirectories (e.g. Lab_8_polynomial_student -> Polynomial_Regression)
-        for sub in os.listdir(lab_src):
-            if os.path.isdir(os.path.join(lab_src, sub)):
-                clean_sub = re.sub(r"^Lab_\d+_", "", sub, flags=re.IGNORECASE)
-                clean_sub = re.sub(r"_(student|todo|copy)", "", clean_sub, flags=re.IGNORECASE)
-                if clean_sub:
-                    topic = clean_sub.title().replace(" ", "_")
-                    break
+        # Infer meaningful topic name
+        topic = KNOWN_TOPICS.get(lab_num, "")
+        if not topic:
+            # Check subdirectories
+            for sub in os.listdir(lab_src):
+                if os.path.isdir(os.path.join(lab_src, sub)) and "solved" not in sub.lower():
+                    clean_sub = re.sub(r"^(Lab_|L)\d+_", "", sub, flags=re.IGNORECASE)
+                    clean_sub = re.sub(r"_(student|todo|copy)", "", clean_sub, flags=re.IGNORECASE)
+                    if clean_sub:
+                        topic = clean_sub.title().replace(" ", "_")
+                        break
         if not topic:
             # Check notebook files in lab_src
             for root_w, _, files_w in os.walk(lab_src):
                 for fw in files_w:
-                    if fw.endswith(".ipynb") and not fw.startswith("."):
-                        clean_fn = re.sub(r"^Lab_\d+_", "", fw.replace(".ipynb", ""), flags=re.IGNORECASE)
+                    if fw.endswith(".ipynb") and not fw.startswith(".") and "solved" not in fw.lower() and "instructor" not in fw.lower():
+                        clean_fn = re.sub(r"^(Lab_|L)\d+_", "", fw.replace(".ipynb", ""), flags=re.IGNORECASE)
                         clean_fn = re.sub(r"_(student|todo|copy|final)", "", clean_fn, flags=re.IGNORECASE)
+                        clean_fn = re.sub(r"^(student|todo)_", "", clean_fn, flags=re.IGNORECASE)
                         if clean_fn:
                             topic = clean_fn.title().replace(" ", "_")
                             break
@@ -87,8 +101,8 @@ for lab in lab_dirs:
     os.makedirs(solved_dir, exist_ok=True)
     os.makedirs(os.path.join(solved_dir, ".ipynb_checkpoints"), exist_ok=True)
 
-    # Locate raw template directory in upstream (e.g. Lab_X_Student_copy, Lab_X_Student_todo, or lab root)
-    subdirs = [d for d in os.listdir(lab_src) if os.path.isdir(os.path.join(lab_src, d)) and "student" in d.lower()]
+    # Locate raw template directory in upstream (e.g. Lab_X_Student_copy, Lab_X_Student_todo, or non-solved dir, or lab root)
+    subdirs = [d for d in os.listdir(lab_src) if os.path.isdir(os.path.join(lab_src, d)) and "solved" not in d.lower()]
     raw_source_dir = os.path.join(lab_src, subdirs[0]) if subdirs else lab_src
 
     # 1. Update raw/ with untouched files from upstream

@@ -25,7 +25,7 @@ AML/
 │   └── sync_labs.sh                   # Upstream pull script for new assignments & questions
 ├── 01_Notes/                          # Lecture notes and foundational reference guides
 │   └── AML_Foundations_Lecture_0_Guide.pdf
-├── 02_Worksheets/                     # Theoretical & practical worksheets (Lectures 00 to 08)
+├── 02_Worksheets/                     # Theoretical & practical worksheets (Lectures 00 to 11)
 │   ├── Worksheet_00_Foundations_From_Code_to_Learning.pdf
 │   ├── Worksheet_01_ML_Project_Lifecycle_EDA_and_Preprocessing.pdf
 │   ├── Worksheet_02_ML_Project_Lifecycle_Feature_Engineering_and_Evaluation.pdf
@@ -34,11 +34,14 @@ AML/
 │   ├── Worksheet_05_Batch_Gradient_Descent_MLR.pdf
 │   ├── Worksheet_06_Stochastic_and_MiniBatch_Gradient_Descent.pdf
 │   ├── Worksheet_07_Regression_and_Classification_Evaluation_Metrics.pdf
-│   └── Worksheet_08_Polynomial_Regression_and_Assumptions.pdf
+│   ├── Worksheet_08_Polynomial_Regression_and_Assumptions.pdf
+│   ├── Worksheet_09_Bias_Variance_and_Tradeoff.pdf
+│   ├── Worksheet_10_Feature_Selection.pdf
+│   └── Worksheet_11_Dimensionality_Reduction_and_PCA.pdf
 ├── 03_HTML_Visualizations/            # Interactive browser-based learning explorables
 │   ├── Module_06_Gradient_Descent_Interactive_Lecture.html
 │   └── Module_07_Momentum_and_NAG_Interactive_Worksheet.html
-├── 04_Notebooks/                      # Hands-on Jupyter lab assignments (Labs 01 to 07)
+├── 04_Notebooks/                      # Hands-on Jupyter lab assignments (Labs 01 to 11)
 │   ├── Lab_01_EDA_and_Preprocessing/
 │   │   └── Lab_01_EDA_and_Preprocessing.ipynb
 │   ├── Lab_02_Feature_Engineering_and_Outliers/
@@ -127,16 +130,32 @@ AML/
 │   │       ├── poly_using_ols_manual.ipynb
 │   │       ├── poly_gradient.py
 │   │       └── poly_ols.py
-│   └── Lab_09_Bias_Variance_Tradeoff/
+│   ├── Lab_09_Bias_Variance_Tradeoff/
+│   │   ├── raw/                       # Exact question from GitHub (untouched)
+│   │   │   ├── Lab_9_Bias_Variance.ipynb
+│   │   │   ├── academic_outcomes.csv
+│   │   │   └── bias_variance_tools.py
+│   │   └── solved/                    # Ready to solve in Jupyter with tracking
+│   │       ├── .ipynb_checkpoints/
+│   │       ├── Lab_9_Bias_Variance.ipynb
+│   │       ├── academic_outcomes.csv
+│   │       └── bias_variance_tools.py
+│   ├── Lab_10_Feature_Selection/
+│   │   ├── raw/                       # Exact question from GitHub (untouched)
+│   │   │   ├── AML_Lab_10_Feature_Selection_Student_TODO.ipynb
+│   │   │   └── student_clean_dataset_2024.csv
+│   │   └── solved/                    # Ready to solve in Jupyter with tracking
+│   │       ├── .ipynb_checkpoints/
+│   │       ├── AML_Lab_10_Feature_Selection_Student_TODO.ipynb
+│   │       └── student_clean_dataset_2024.csv
+│   └── Lab_11_PCA_Dimensionality_Reduction/
 │       ├── raw/                       # Exact question from GitHub (untouched)
-│       │   ├── Lab_9_Bias_Variance.ipynb
-│       │   ├── academic_outcomes.csv
-│       │   └── bias_variance_tools.py
+│       │   ├── L11_Student_PCA_TODO.ipynb
+│       │   └── student_clean_dataset.csv
 │       └── solved/                    # Ready to solve in Jupyter with tracking
 │           ├── .ipynb_checkpoints/
-│           ├── Lab_9_Bias_Variance.ipynb
-│           ├── academic_outcomes.csv
-│           └── bias_variance_tools.py
+│           ├── L11_Student_PCA_TODO.ipynb
+│           └── student_clean_dataset.csv
 └── .upstream/                         # Hidden git mirror for aml_lab (used by sync_labs.sh)
 ```
 
@@ -248,9 +267,34 @@ AML/
 
 | Category | File | Description |
 | :--- | :--- | :--- |
+| **Worksheets** | [Worksheet_09_Bias_Variance_and_Tradeoff.pdf](02_Worksheets/Worksheet_09_Bias_Variance_and_Tradeoff.pdf) | Bias, variance, irreducible error, decomposition derivation, and complexity curves |
 | **Solved Notebook** | [Lab_9_Bias_Variance.ipynb](04_Notebooks/Lab_09_Bias_Variance_Tradeoff/solved/Lab_9_Bias_Variance.ipynb) | In-depth bias-variance decomposition notebook with `bias_variance_tools.py` |
 | **Dataset** | [academic_outcomes.csv](04_Notebooks/Lab_09_Bias_Variance_Tradeoff/solved/academic_outcomes.csv) | Academic performance dataset for bias-variance complexity curves |
 | **Raw Assignment** | [Lab_9 Raw Question](04_Notebooks/Lab_09_Bias_Variance_Tradeoff/raw/) | Clean unmodified question set directly from upstream GitHub |
+
+---
+
+### Module 10: Feature Selection
+*Filter methods (variance threshold, correlation analysis), wrapper methods (Recursive Feature Elimination - RFE), and embedded methods for feature relevance and multicollinearity mitigation.*
+
+| Category | File | Description |
+| :--- | :--- | :--- |
+| **Worksheets** | [Worksheet_10_Feature_Selection.pdf](02_Worksheets/Worksheet_10_Feature_Selection.pdf) | Filter, wrapper, and embedded feature selection techniques, correlation heatmaps, and RFE |
+| **Solved Notebook** | [AML_Lab_10_Feature_Selection_Student_TODO.ipynb](04_Notebooks/Lab_10_Feature_Selection/solved/AML_Lab_10_Feature_Selection_Student_TODO.ipynb) | Working notebook ready for solving with tracking intact |
+| **Dataset** | [student_clean_dataset_2024.csv](04_Notebooks/Lab_10_Feature_Selection/solved/student_clean_dataset_2024.csv) | Cleaned student dataset for feature selection experiments |
+| **Raw Assignment** | [Lab_10 Raw Question](04_Notebooks/Lab_10_Feature_Selection/raw/) | Clean unmodified question set directly from upstream GitHub |
+
+---
+
+### Module 11: Dimensionality Reduction & Principal Component Analysis (PCA)
+*Curse of dimensionality, geometric projections, variance maximization, covariance matrix eigendecomposition, singular value decomposition (SVD), and scree plots.*
+
+| Category | File | Description |
+| :--- | :--- | :--- |
+| **Worksheets** | [Worksheet_11_Dimensionality_Reduction_and_PCA.pdf](02_Worksheets/Worksheet_11_Dimensionality_Reduction_and_PCA.pdf) | Mathematical foundations of PCA, covariance, eigenvectors, eigenvalue decomposition, and variance explained |
+| **Solved Notebook** | [L11_Student_PCA_TODO.ipynb](04_Notebooks/Lab_11_PCA_Dimensionality_Reduction/solved/L11_Student_PCA_TODO.ipynb) | Working notebook ready for solving with tracking intact |
+| **Dataset** | [student_clean_dataset.csv](04_Notebooks/Lab_11_PCA_Dimensionality_Reduction/solved/student_clean_dataset.csv) | Student dataset for dimensionality reduction and projection |
+| **Raw Assignment** | [Lab_11 Raw Question](04_Notebooks/Lab_11_PCA_Dimensionality_Reduction/raw/) | Clean unmodified question set directly from upstream GitHub |
 
 ---
 
