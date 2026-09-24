@@ -28,7 +28,8 @@ AML/
 ├── docs/                              # Beginner-friendly study guides ("Machine Learning Made Simple")
 │   ├── 01_ML_Project_Lifecycle_EDA_and_Preprocessing.md
 │   ├── 02_ML_Project_Lifecycle_Feature_Engineering_and_Evaluation.md
-│   └── 03_Simple_Linear_Regression_OLS.md
+│   ├── 03_Simple_Linear_Regression_OLS.md
+│   └── 04_Multiple_Linear_Regression_OLS.md
 ├── 02_Worksheets/                     # Theoretical & practical worksheets (Lectures 00 to 11)
 │   ├── Worksheet_00_Foundations_From_Code_to_Learning.pdf
 │   ├── Worksheet_01_ML_Project_Lifecycle_EDA_and_Preprocessing.pdf
@@ -216,6 +217,7 @@ AML/
 
 | Category | File | Description |
 | :--- | :--- | :--- |
+| **Study Guide** | [04_Multiple_Linear_Regression_OLS.md](docs/04_Multiple_Linear_Regression_OLS.md) | Simplified guide to Multiple Linear Regression, matrix calculus, and Normal Equation |
 | **Worksheets** | [Worksheet_04_Multiple_Linear_Regression_OLS.pdf](02_Worksheets/Worksheet_04_Multiple_Linear_Regression_OLS.pdf) | Matrix formulation, normal equations, and multiple feature interactions |
 | **Solved Notebook** | [Lab_4_student_notebook.ipynb](04_Notebooks/Lab_04_Multiple_Linear_Regression_OLS/solved/Lab_4_student_notebook.ipynb) | Solved notebook with 26 execution outputs and `mlr_ols_todo.py` solution |
 | **Raw Assignment** | [Lab_4 Raw Question](04_Notebooks/Lab_04_Multiple_Linear_Regression_OLS/raw/) | Clean unmodified question set directly from upstream GitHub |
