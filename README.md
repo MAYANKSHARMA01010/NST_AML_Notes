@@ -25,6 +25,10 @@ AML/
 │   └── sync_labs.sh                   # Upstream pull script for new assignments & questions
 ├── 01_Notes/                          # Lecture notes and foundational reference guides
 │   └── AML_Foundations_Lecture_0_Guide.pdf
+├── docs/                              # Beginner-friendly study guides ("Machine Learning Made Simple")
+│   ├── 01_ML_Project_Lifecycle_EDA_and_Preprocessing.md
+│   ├── 02_ML_Project_Lifecycle_Feature_Engineering_and_Evaluation.md
+│   └── 03_Simple_Linear_Regression_OLS.md
 ├── 02_Worksheets/                     # Theoretical & practical worksheets (Lectures 00 to 11)
 │   ├── Worksheet_00_Foundations_From_Code_to_Learning.pdf
 │   ├── Worksheet_01_ML_Project_Lifecycle_EDA_and_Preprocessing.pdf
@@ -178,6 +182,7 @@ AML/
 
 | Category | File | Description |
 | :--- | :--- | :--- |
+| **Study Guide** | [01_ML_Project_Lifecycle_EDA_and_Preprocessing.md](docs/01_ML_Project_Lifecycle_EDA_and_Preprocessing.md) | Simplified guide to problem framing, EDA, and data preparation |
 | **Worksheets** | [Worksheet_01_ML_Project_Lifecycle_EDA_and_Preprocessing.pdf](02_Worksheets/Worksheet_01_ML_Project_Lifecycle_EDA_and_Preprocessing.pdf) | Project lifecycle worksheet covering collection, distribution checks, and cleaning |
 | **Notebooks** | [Lab_01_EDA_and_Preprocessing.ipynb](04_Notebooks/Lab_01_EDA_and_Preprocessing/Lab_01_EDA_and_Preprocessing.ipynb) | Hands-on exploratory data analysis, visualizations, and preprocessing pipeline |
 
@@ -188,6 +193,7 @@ AML/
 
 | Category | File | Description |
 | :--- | :--- | :--- |
+| **Study Guide** | [02_ML_Project_Lifecycle_Feature_Engineering_and_Evaluation.md](docs/02_ML_Project_Lifecycle_Feature_Engineering_and_Evaluation.md) | Simplified guide to data splitting, feature engineering, metrics, and drift |
 | **Worksheets** | [Worksheet_02_ML_Project_Lifecycle_Feature_Engineering_and_Evaluation.pdf](02_Worksheets/Worksheet_02_ML_Project_Lifecycle_Feature_Engineering_and_Evaluation.pdf) | Data isolation, feature creation, scaling, evaluation metrics, and deployment loops |
 | **Notebooks** | [Lab_02_Feature_Engineering_and_Outliers.ipynb](04_Notebooks/Lab_02_Feature_Engineering_and_Outliers/Lab_02_Feature_Engineering_and_Outliers.ipynb) | Feature engineering, IQR outlier filtering, Z-score transformations, and scaling |
 
@@ -198,6 +204,7 @@ AML/
 
 | Category | File | Description |
 | :--- | :--- | :--- |
+| **Study Guide** | [03_Simple_Linear_Regression_OLS.md](docs/03_Simple_Linear_Regression_OLS.md) | Simplified guide to Simple Linear Regression & complete step-by-step OLS derivation |
 | **Worksheets** | [Worksheet_03_Simple_Linear_Regression_OLS_Teacher_Copy.pdf](02_Worksheets/Worksheet_03_Simple_Linear_Regression_OLS_Teacher_Copy.pdf) | Complete mathematical OLS derivation from scatter plots to best-fit lines |
 | **Solved Notebook** | [Lab_3_student_notebook.ipynb](04_Notebooks/Lab_03_Simple_Linear_Regression_OLS/solved/Lab_3_student_notebook.ipynb) | Solved notebook with 24 execution outputs and Jupyter tracking intact |
 | **Raw Assignment** | [Lab_3 Raw Question](04_Notebooks/Lab_03_Simple_Linear_Regression_OLS/raw/) | Clean unmodified question set directly from upstream GitHub |
