@@ -30,7 +30,8 @@ AML/
 │   ├── 02_ML_Project_Lifecycle_Feature_Engineering_and_Evaluation.md
 │   ├── 03_Simple_Linear_Regression_OLS.md
 │   ├── 04_Multiple_Linear_Regression_OLS.md
-│   └── 05_Batch_Gradient_Descent_MLR.md
+│   ├── 05_Batch_Gradient_Descent_MLR.md
+│   └── 06_Stochastic_and_MiniBatch_Gradient_Descent.md
 ├── 02_Worksheets/                     # Theoretical & practical worksheets (Lectures 00 to 11)
 │   ├── Worksheet_00_Foundations_From_Code_to_Learning.pdf
 │   ├── Worksheet_01_ML_Project_Lifecycle_EDA_and_Preprocessing.pdf
@@ -242,6 +243,7 @@ AML/
 
 | Category | File | Description |
 | :--- | :--- | :--- |
+| **Study Guide** | [06_Stochastic_and_MiniBatch_Gradient_Descent.md](docs/06_Stochastic_and_MiniBatch_Gradient_Descent.md) | Simplified guide to SGD, mini-batch trade-offs, and GPU hardware parallelism |
 | **Worksheets** | [Worksheet_06_Stochastic_and_MiniBatch_Gradient_Descent.pdf](02_Worksheets/Worksheet_06_Stochastic_and_MiniBatch_Gradient_Descent.pdf) | Stochastic & mini-batch gradient descent derivation, update mechanics, and batch sizing |
 | **Interactive Lecture** | [Module_06_Gradient_Descent_Interactive_Lecture.html](03_HTML_Visualizations/Module_06_Gradient_Descent_Interactive_Lecture.html) | Interactive 3D and 2D loss surface visualizer comparing Batch GD, SGD, and Mini-batch |
 | **Solved Notebook** | [Lab_6_Final_BGD_MLR_student_todo.ipynb](04_Notebooks/Lab_06_MiniBatch_SGD_MLR/solved/Lab_6_Final_BGD_MLR_student_todo.ipynb) | Solved mini-batch SGD notebook with 16 outputs and `mlr_gradient_descent_minibatch.py` |
