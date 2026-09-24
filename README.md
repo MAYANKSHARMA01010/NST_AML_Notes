@@ -29,7 +29,8 @@ AML/
 │   ├── 01_ML_Project_Lifecycle_EDA_and_Preprocessing.md
 │   ├── 02_ML_Project_Lifecycle_Feature_Engineering_and_Evaluation.md
 │   ├── 03_Simple_Linear_Regression_OLS.md
-│   └── 04_Multiple_Linear_Regression_OLS.md
+│   ├── 04_Multiple_Linear_Regression_OLS.md
+│   └── 05_Batch_Gradient_Descent_MLR.md
 ├── 02_Worksheets/                     # Theoretical & practical worksheets (Lectures 00 to 11)
 │   ├── Worksheet_00_Foundations_From_Code_to_Learning.pdf
 │   ├── Worksheet_01_ML_Project_Lifecycle_EDA_and_Preprocessing.pdf
@@ -229,6 +230,7 @@ AML/
 
 | Category | File | Description |
 | :--- | :--- | :--- |
+| **Study Guide** | [05_Batch_Gradient_Descent_MLR.md](docs/05_Batch_Gradient_Descent_MLR.md) | Simplified guide to Batch Gradient Descent, MSE gradient derivation, and learning rate dynamics |
 | **Worksheets** | [Worksheet_05_Batch_Gradient_Descent_MLR.pdf](02_Worksheets/Worksheet_05_Batch_Gradient_Descent_MLR.pdf) | Deriving gradients, learning rate selection, and iterative weight updates |
 | **Solved Notebook** | [Lab_5_Final_BGD_MLR_student_todo.ipynb](04_Notebooks/Lab_05_Batch_Gradient_Descent_MLR/solved/Lab_5_Final_BGD_MLR_student_todo.ipynb) | Solved notebook with 21 execution outputs and `mlr_gradient_descent.py` |
 | **Raw Assignment** | [Lab_5 Raw Question](04_Notebooks/Lab_05_Batch_Gradient_Descent_MLR/raw/) | Clean unmodified question set directly from upstream GitHub |
