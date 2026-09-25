@@ -33,7 +33,8 @@ AML/
 │   ├── 05_Batch_Gradient_Descent_MLR.md
 │   ├── 06_Stochastic_and_MiniBatch_Gradient_Descent.md
 │   ├── 07_Regression_and_Classification_Evaluation_Metrics.md
-│   └── 08_Polynomial_Regression_and_Assumptions.md
+│   ├── 08_Polynomial_Regression_and_Assumptions.md
+│   └── 09_Bias_Variance_and_Tradeoff.md
 ├── 02_Worksheets/                     # Theoretical & practical worksheets (Lectures 00 to 11)
 │   ├── Worksheet_00_Foundations_From_Code_to_Learning.pdf
 │   ├── Worksheet_01_ML_Project_Lifecycle_EDA_and_Preprocessing.pdf
@@ -284,6 +285,7 @@ AML/
 
 | Category | File | Description |
 | :--- | :--- | :--- |
+| **Study Guide** | [09_Bias_Variance_and_Tradeoff.md](docs/09_Bias_Variance_and_Tradeoff.md) | Simplified guide to Bias, Variance, MSE Decomposition proof, dartboard analogy, and diagnostic curves |
 | **Worksheets** | [Worksheet_09_Bias_Variance_and_Tradeoff.pdf](02_Worksheets/Worksheet_09_Bias_Variance_and_Tradeoff.pdf) | Bias, variance, irreducible error, decomposition derivation, and complexity curves |
 | **Solved Notebook** | [Lab_9_Bias_Variance.ipynb](04_Notebooks/Lab_09_Bias_Variance_Tradeoff/solved/Lab_9_Bias_Variance.ipynb) | In-depth bias-variance decomposition notebook with `bias_variance_tools.py` |
 | **Dataset** | [academic_outcomes.csv](04_Notebooks/Lab_09_Bias_Variance_Tradeoff/solved/academic_outcomes.csv) | Academic performance dataset for bias-variance complexity curves |
