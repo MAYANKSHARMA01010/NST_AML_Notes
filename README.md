@@ -31,7 +31,8 @@ AML/
 │   ├── 03_Simple_Linear_Regression_OLS.md
 │   ├── 04_Multiple_Linear_Regression_OLS.md
 │   ├── 05_Batch_Gradient_Descent_MLR.md
-│   └── 06_Stochastic_and_MiniBatch_Gradient_Descent.md
+│   ├── 06_Stochastic_and_MiniBatch_Gradient_Descent.md
+│   └── 07_Regression_and_Classification_Evaluation_Metrics.md
 ├── 02_Worksheets/                     # Theoretical & practical worksheets (Lectures 00 to 11)
 │   ├── Worksheet_00_Foundations_From_Code_to_Learning.pdf
 │   ├── Worksheet_01_ML_Project_Lifecycle_EDA_and_Preprocessing.pdf
@@ -256,6 +257,7 @@ AML/
 
 | Category | File | Description |
 | :--- | :--- | :--- |
+| **Study Guide** | [07_Regression_and_Classification_Evaluation_Metrics.md](docs/07_Regression_and_Classification_Evaluation_Metrics.md) | Simplified guide to regression (MAE, RMSE, R², Adj R²) & classification (Confusion Matrix, F1, Averaging) metrics |
 | **Worksheets** | [Worksheet_07_Regression_and_Classification_Evaluation_Metrics.pdf](02_Worksheets/Worksheet_07_Regression_and_Classification_Evaluation_Metrics.pdf) | Regression & classification metrics (Residuals, MAE, MAPE, MSE, RMSE, R², Adjusted R², Confusion Matrix, F1) |
 | **Interactive Worksheet** | [Module_07_Momentum_and_NAG_Interactive_Worksheet.html](03_HTML_Visualizations/Module_07_Momentum_and_NAG_Interactive_Worksheet.html) | Interactive simulation of EWMA, SGD with Momentum, and Nesterov Accelerated Gradient |
 | **Solved Notebook** | [lab_7_St_c.ipynb](04_Notebooks/Lab_07_Student_Performance_and_Placement/solved/lab_7_St_c.ipynb) | Working notebook ready for solving with tracking intact |
