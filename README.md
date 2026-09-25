@@ -32,7 +32,8 @@ AML/
 │   ├── 04_Multiple_Linear_Regression_OLS.md
 │   ├── 05_Batch_Gradient_Descent_MLR.md
 │   ├── 06_Stochastic_and_MiniBatch_Gradient_Descent.md
-│   └── 07_Regression_and_Classification_Evaluation_Metrics.md
+│   ├── 07_Regression_and_Classification_Evaluation_Metrics.md
+│   └── 08_Polynomial_Regression_and_Assumptions.md
 ├── 02_Worksheets/                     # Theoretical & practical worksheets (Lectures 00 to 11)
 │   ├── Worksheet_00_Foundations_From_Code_to_Learning.pdf
 │   ├── Worksheet_01_ML_Project_Lifecycle_EDA_and_Preprocessing.pdf
@@ -270,6 +271,7 @@ AML/
 
 | Category | File | Description |
 | :--- | :--- | :--- |
+| **Study Guide** | [08_Polynomial_Regression_and_Assumptions.md](docs/08_Polynomial_Regression_and_Assumptions.md) | Simplified guide to polynomial regression, linear-in-parameters intuition, overfitting, and the 5 OLS assumptions |
 | **Worksheets** | [Worksheet_08_Polynomial_Regression_and_Assumptions.pdf](02_Worksheets/Worksheet_08_Polynomial_Regression_and_Assumptions.pdf) | Polynomial regression, nonlinear mappings, overfitting, and the five linear regression assumptions |
 | **Solved Notebook (OLS)** | [poly_using_ols_manual.ipynb](04_Notebooks/Lab_08_Polynomial_Regression/solved/poly_using_ols_manual.ipynb) | Manual OLS implementation for polynomial models with `poly_ols.py` |
 | **Solved Notebook (GD)** | [Poly_using_gradient_final.ipynb](04_Notebooks/Lab_08_Polynomial_Regression/solved/Poly_using_gradient_final.ipynb) | Gradient descent optimization for polynomial regression with `poly_gradient.py` |
