@@ -158,13 +158,29 @@ AML/
 │   │       ├── .ipynb_checkpoints/
 │   │       ├── AML_Lab_10_Feature_Selection_Student_TODO.ipynb
 │   │       └── student_clean_dataset_2024.csv
-│   └── Lab_11_PCA_Dimensionality_Reduction/
+│   ├── Lab_11_PCA_Dimensionality_Reduction/
+│   │   ├── raw/                       # Exact question from GitHub (untouched)
+│   │   │   ├── L11_Student_PCA_TODO.ipynb
+│   │   │   └── student_clean_dataset.csv
+│   │   └── solved/                    # Ready to solve in Jupyter with tracking
+│   │       ├── .ipynb_checkpoints/
+│   │       ├── L11_Student_PCA_TODO.ipynb
+│   │       └── student_clean_dataset.csv
+│   ├── Lab_12_Regularization_Ridge_and_Lasso/
+│   │   ├── raw/                       # Exact question from GitHub (untouched)
+│   │   │   ├── Lab_12_Colab_Notebook_Todo.ipynb
+│   │   │   └── student_clean_dataset.csv
+│   │   └── solved/                    # Ready to solve in Jupyter with tracking
+│   │       ├── .ipynb_checkpoints/
+│   │       ├── Lab_12_Colab_Notebook_Todo.ipynb
+│   │       └── student_clean_dataset.csv
+│   └── Lab_13_Time_Series_Analysis/
 │       ├── raw/                       # Exact question from GitHub (untouched)
-│       │   ├── L11_Student_PCA_TODO.ipynb
+│       │   ├── Lab_13_Colab_Notebook_Todo_Student.ipynb
 │       │   └── student_clean_dataset.csv
 │       └── solved/                    # Ready to solve in Jupyter with tracking
 │           ├── .ipynb_checkpoints/
-│           ├── L11_Student_PCA_TODO.ipynb
+│           ├── Lab_13_Colab_Notebook_Todo_Student.ipynb
 │           └── student_clean_dataset.csv
 └── .upstream/                         # Hidden git mirror for aml_lab (used by sync_labs.sh)
 ```
@@ -314,6 +330,28 @@ AML/
 | **Solved Notebook** | [L11_Student_PCA_TODO.ipynb](04_Notebooks/Lab_11_PCA_Dimensionality_Reduction/solved/L11_Student_PCA_TODO.ipynb) | Working notebook ready for solving with tracking intact |
 | **Dataset** | [student_clean_dataset.csv](04_Notebooks/Lab_11_PCA_Dimensionality_Reduction/solved/student_clean_dataset.csv) | Student dataset for dimensionality reduction and projection |
 | **Raw Assignment** | [Lab_11 Raw Question](04_Notebooks/Lab_11_PCA_Dimensionality_Reduction/raw/) | Clean unmodified question set directly from upstream GitHub |
+
+---
+
+### Module 12: Regularization — Ridge ($L_2$) & Lasso ($L_1$) Regression
+*Shrinkage estimators, penalizing model complexity to prevent overfitting and multicollinearity. Analytical closed-form Ridge $\hat{\beta}_{\text{ridge}} = (X^T X + \lambda I)^{-1} X^T y$, Lasso coordinate descent, sparsity, and geometric constraint interpretation.*
+
+| Category | File | Description |
+| :--- | :--- | :--- |
+| **Solved Notebook** | [Lab_12_Colab_Notebook_Todo.ipynb](04_Notebooks/Lab_12_Regularization_Ridge_and_Lasso/solved/Lab_12_Colab_Notebook_Todo.ipynb) | Ridge ($L_2$) & Lasso ($L_1$) implementation, coefficient path visualization, and scratch Ridge code |
+| **Dataset** | [student_clean_dataset.csv](04_Notebooks/Lab_12_Regularization_Ridge_and_Lasso/solved/student_clean_dataset.csv) | Clean student dataset for regularized regression tasks |
+| **Raw Assignment** | [Lab_12 Raw Question](04_Notebooks/Lab_12_Regularization_Ridge_and_Lasso/raw/) | Clean unmodified question set directly from upstream GitHub |
+
+---
+
+### Module 13: Time Series Analysis — Stationarity, Autoregression (AR) & Moving Average (MA)
+*Breaking i.i.d. assumptions: temporal dependency, trend/seasonal decomposition, stationarity tests (ADF test, rolling metrics), differencing, ACF/PACF plots, AR(p), and MA(q) models.*
+
+| Category | File | Description |
+| :--- | :--- | :--- |
+| **Solved Notebook** | [Lab_13_Colab_Notebook_Todo_Student.ipynb](04_Notebooks/Lab_13_Time_Series_Analysis/solved/Lab_13_Colab_Notebook_Todo_Student.ipynb) | Time series decomposition, rolling stats, ADF test, ACF/PACF orders, and AR/MA models |
+| **Dataset** | [student_clean_dataset.csv](04_Notebooks/Lab_13_Time_Series_Analysis/solved/student_clean_dataset.csv) | Real student data proxy time series sequence |
+| **Raw Assignment** | [Lab_13 Raw Question](04_Notebooks/Lab_13_Time_Series_Analysis/raw/) | Clean unmodified question set directly from upstream GitHub |
 
 ---
 

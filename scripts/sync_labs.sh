@@ -41,7 +41,9 @@ KNOWN_TOPICS = {
     8: "Polynomial_Regression",
     9: "Bias_Variance_Tradeoff",
     10: "Feature_Selection",
-    11: "PCA_Dimensionality_Reduction"
+    11: "PCA_Dimensionality_Reduction",
+    12: "Regularization_Ridge_and_Lasso",
+    13: "Time_Series_Analysis"
 }
 
 # Scan for Lab directories in upstream (e.g. Lab_3, Lab_4, Lab_5, Lab_6, Lab_7, Lab_8, etc.)
@@ -111,14 +113,28 @@ for lab in lab_dirs:
         if os.path.isfile(src_file):
             shutil.copy2(src_file, os.path.join(raw_dir, f))
 
-    # 2. If solved/ is empty, initialize it with the starter files ready to work on
-    existing_solved_files = [f for f in os.listdir(solved_dir) if not f.startswith(".")]
-    if not existing_solved_files:
-        for f in os.listdir(raw_dir):
-            src_file = os.path.join(raw_dir, f)
-            if os.path.isfile(src_file):
-                shutil.copy2(src_file, os.path.join(solved_dir, f))
-        print(f"    [Initialized solved/] for {os.path.basename(target_lab_dir)}")
+    # Auto-provide student_clean_dataset.csv if notebook requires it and it's missing in upstream
+    common_dataset = os.path.join(NOTEBOOKS_DIR, "Lab_11_PCA_Dimensionality_Reduction", "raw", "student_clean_dataset.csv")
+    if os.path.exists(common_dataset):
+        needs_dataset = False
+        for fn in os.listdir(raw_dir):
+            if fn.endswith(".ipynb"):
+                with open(os.path.join(raw_dir, fn), "r", encoding="utf-8", errors="ignore") as nbf:
+                    if "student_clean_dataset.csv" in nbf.read():
+                        needs_dataset = True
+                        break
+        if needs_dataset and not os.path.exists(os.path.join(raw_dir, "student_clean_dataset.csv")):
+            shutil.copy2(common_dataset, os.path.join(raw_dir, "student_clean_dataset.csv"))
+            shutil.copy2(common_dataset, os.path.join(solved_dir, "student_clean_dataset.csv"))
+            print(f"    [Provided student_clean_dataset.csv] for {os.path.basename(target_lab_dir)}")
+
+    # 2. Initialize solved/ with starter files ready to work on (copy any missing files from raw)
+    for f in os.listdir(raw_dir):
+        src_file = os.path.join(raw_dir, f)
+        target_file = os.path.join(solved_dir, f)
+        if os.path.isfile(src_file) and not os.path.exists(target_file):
+            shutil.copy2(src_file, target_file)
+            print(f"    [Initialized starter file {f}] in {os.path.basename(target_lab_dir)}/solved")
 
 print("\n==> Sync check complete.")
 EOF
