@@ -35,7 +35,7 @@ AML/
 │   ├── 07_Regression_and_Classification_Evaluation_Metrics.md
 │   ├── 08_Polynomial_Regression_and_Assumptions.md
 │   └── 09_Bias_Variance_and_Tradeoff.md
-├── 02_Worksheets/                     # Theoretical & practical worksheets (Lectures 00 to 11)
+├── 02_Worksheets/                     # Theoretical & practical worksheets (Lectures 00 to 15)
 │   ├── Worksheet_00_Foundations_From_Code_to_Learning.pdf
 │   ├── Worksheet_01_ML_Project_Lifecycle_EDA_and_Preprocessing.pdf
 │   ├── Worksheet_02_ML_Project_Lifecycle_Feature_Engineering_and_Evaluation.pdf
@@ -47,11 +47,15 @@ AML/
 │   ├── Worksheet_08_Polynomial_Regression_and_Assumptions.pdf
 │   ├── Worksheet_09_Bias_Variance_and_Tradeoff.pdf
 │   ├── Worksheet_10_Feature_Selection.pdf
-│   └── Worksheet_11_Dimensionality_Reduction_and_PCA.pdf
+│   ├── Worksheet_11_Dimensionality_Reduction_and_PCA.pdf
+│   ├── Worksheet_12_Regularization_Ridge_and_Lasso.pdf
+│   ├── Worksheet_13_Time_Series_Analysis.pdf
+│   ├── Worksheet_14_MLE_and_Logistic_Regression.pdf
+│   └── Worksheet_15_Gradient_Descent_and_Multiclass_Classification.pdf
 ├── 03_HTML_Visualizations/            # Interactive browser-based learning explorables
 │   ├── Module_06_Gradient_Descent_Interactive_Lecture.html
 │   └── Module_07_Momentum_and_NAG_Interactive_Worksheet.html
-├── 04_Notebooks/                      # Hands-on Jupyter lab assignments (Labs 01 to 11)
+├── 04_Notebooks/                      # Hands-on Jupyter lab assignments (Labs 01 to 14)
 │   ├── Lab_01_EDA_and_Preprocessing/
 │   │   └── Lab_01_EDA_and_Preprocessing.ipynb
 │   ├── Lab_02_Feature_Engineering_and_Outliers/
@@ -161,26 +165,42 @@ AML/
 │   ├── Lab_11_PCA_Dimensionality_Reduction/
 │   │   ├── raw/                       # Exact question from GitHub (untouched)
 │   │   │   ├── L11_Student_PCA_TODO.ipynb
+│   │   │   ├── L_11_PCA_Complete.ipynb
 │   │   │   └── student_clean_dataset.csv
 │   │   └── solved/                    # Ready to solve in Jupyter with tracking
 │   │       ├── .ipynb_checkpoints/
 │   │       ├── L11_Student_PCA_TODO.ipynb
+│   │       ├── L_11_PCA_Complete.ipynb
 │   │       └── student_clean_dataset.csv
 │   ├── Lab_12_Regularization_Ridge_and_Lasso/
 │   │   ├── raw/                       # Exact question from GitHub (untouched)
 │   │   │   ├── Lab_12_Colab_Notebook_Todo.ipynb
+│   │   │   ├── Lab_12_L1_L2_Complete.ipynb
 │   │   │   └── student_clean_dataset.csv
 │   │   └── solved/                    # Ready to solve in Jupyter with tracking
 │   │       ├── .ipynb_checkpoints/
 │   │       ├── Lab_12_Colab_Notebook_Todo.ipynb
+│   │       ├── Lab_12_L1_L2_Complete.ipynb
 │   │       └── student_clean_dataset.csv
-│   └── Lab_13_Time_Series_Analysis/
+│   ├── Lab_13_Time_Series_Analysis/
+│   │   ├── raw/                       # Exact question from GitHub (untouched)
+│   │   │   ├── Lab_13_Colab_Notebook_Todo_Student.ipynb
+│   │   │   ├── Lab_13_Colab_Notebook_complete.ipynb
+│   │   │   └── student_clean_dataset.csv
+│   │   └── solved/                    # Ready to solve in Jupyter with tracking
+│   │       ├── .ipynb_checkpoints/
+│   │       ├── Lab_13_Colab_Notebook_Todo_Student.ipynb
+│   │       ├── Lab_13_Colab_Notebook_complete.ipynb
+│   │       └── student_clean_dataset.csv
+│   └── Lab_14_Logistic_Regression/
 │       ├── raw/                       # Exact question from GitHub (untouched)
-│       │   ├── Lab_13_Colab_Notebook_Todo_Student.ipynb
+│       │   ├── Lab_14_Logistic_Student_TODO.ipynb
+│       │   ├── Lab_14_Colab_Notebook_Complete.ipynb
 │       │   └── student_clean_dataset.csv
 │       └── solved/                    # Ready to solve in Jupyter with tracking
 │           ├── .ipynb_checkpoints/
-│           ├── Lab_13_Colab_Notebook_Todo_Student.ipynb
+│           ├── Lab_14_Logistic_Student_TODO.ipynb
+│           ├── Lab_14_Colab_Notebook_Complete.ipynb
 │           └── student_clean_dataset.csv
 └── .upstream/                         # Hidden git mirror for aml_lab (used by sync_labs.sh)
 ```
@@ -328,6 +348,7 @@ AML/
 | :--- | :--- | :--- |
 | **Worksheets** | [Worksheet_11_Dimensionality_Reduction_and_PCA.pdf](02_Worksheets/Worksheet_11_Dimensionality_Reduction_and_PCA.pdf) | Mathematical foundations of PCA, covariance, eigenvectors, eigenvalue decomposition, and variance explained |
 | **Solved Notebook** | [L11_Student_PCA_TODO.ipynb](04_Notebooks/Lab_11_PCA_Dimensionality_Reduction/solved/L11_Student_PCA_TODO.ipynb) | Working notebook ready for solving with tracking intact |
+| **Complete Reference** | [L_11_PCA_Complete.ipynb](04_Notebooks/Lab_11_PCA_Dimensionality_Reduction/solved/L_11_PCA_Complete.ipynb) | Instructor complete reference implementation for PCA |
 | **Dataset** | [student_clean_dataset.csv](04_Notebooks/Lab_11_PCA_Dimensionality_Reduction/solved/student_clean_dataset.csv) | Student dataset for dimensionality reduction and projection |
 | **Raw Assignment** | [Lab_11 Raw Question](04_Notebooks/Lab_11_PCA_Dimensionality_Reduction/raw/) | Clean unmodified question set directly from upstream GitHub |
 
@@ -338,7 +359,9 @@ AML/
 
 | Category | File | Description |
 | :--- | :--- | :--- |
+| **Worksheet** | [Worksheet_12_Regularization_Ridge_and_Lasso.pdf](02_Worksheets/Worksheet_12_Regularization_Ridge_and_Lasso.pdf) | Mathematical foundations of Ridge ($L_2$) and Lasso ($L_1$) regularization, penalty terms, and shrinkage |
 | **Solved Notebook** | [Lab_12_Colab_Notebook_Todo.ipynb](04_Notebooks/Lab_12_Regularization_Ridge_and_Lasso/solved/Lab_12_Colab_Notebook_Todo.ipynb) | Ridge ($L_2$) & Lasso ($L_1$) implementation, coefficient path visualization, and scratch Ridge code |
+| **Complete Reference** | [Lab_12_L1_L2_Complete.ipynb](04_Notebooks/Lab_12_Regularization_Ridge_and_Lasso/solved/Lab_12_L1_L2_Complete.ipynb) | Instructor complete reference implementation for Ridge & Lasso ($L_1 / L_2$) |
 | **Dataset** | [student_clean_dataset.csv](04_Notebooks/Lab_12_Regularization_Ridge_and_Lasso/solved/student_clean_dataset.csv) | Clean student dataset for regularized regression tasks |
 | **Raw Assignment** | [Lab_12 Raw Question](04_Notebooks/Lab_12_Regularization_Ridge_and_Lasso/raw/) | Clean unmodified question set directly from upstream GitHub |
 
@@ -349,9 +372,35 @@ AML/
 
 | Category | File | Description |
 | :--- | :--- | :--- |
+| **Worksheet** | [Worksheet_13_Time_Series_Analysis.pdf](02_Worksheets/Worksheet_13_Time_Series_Analysis.pdf) | Mathematical foundations of temporal data, stationarity tests, differencing, and AR/MA models |
 | **Solved Notebook** | [Lab_13_Colab_Notebook_Todo_Student.ipynb](04_Notebooks/Lab_13_Time_Series_Analysis/solved/Lab_13_Colab_Notebook_Todo_Student.ipynb) | Time series decomposition, rolling stats, ADF test, ACF/PACF orders, and AR/MA models |
+| **Complete Reference** | [Lab_13_Colab_Notebook_complete.ipynb](04_Notebooks/Lab_13_Time_Series_Analysis/solved/Lab_13_Colab_Notebook_complete.ipynb) | Instructor complete reference implementation for Time Series Analysis |
 | **Dataset** | [student_clean_dataset.csv](04_Notebooks/Lab_13_Time_Series_Analysis/solved/student_clean_dataset.csv) | Real student data proxy time series sequence |
 | **Raw Assignment** | [Lab_13 Raw Question](04_Notebooks/Lab_13_Time_Series_Analysis/raw/) | Clean unmodified question set directly from upstream GitHub |
+
+---
+
+### Module 14: Logistic Regression & Maximum Likelihood Estimation (MLE)
+*Sigmoid activation $g(z) = \frac{1}{1 + e^{-z}}$, odds ratio, log-odds, Bernoulli probability model, likelihood and log-likelihood formulations, binary cross-entropy (log loss), and decision boundary geometry.*
+
+| Category | File | Description |
+| :--- | :--- | :--- |
+| **Worksheet** | [Worksheet_14_MLE_and_Logistic_Regression.pdf](02_Worksheets/Worksheet_14_MLE_and_Logistic_Regression.pdf) | Maximum Likelihood Estimation, Sigmoid activation, Bernoulli model, and Binary Cross-Entropy |
+| **Solved Notebook** | [Lab_14_Logistic_Student_TODO.ipynb](04_Notebooks/Lab_14_Logistic_Regression/solved/Lab_14_Logistic_Student_TODO.ipynb) | Working student notebook with TODO tasks: sigmoid, gradient descent from scratch, OvR & Softmax |
+| **Complete Reference** | [Lab_14_Colab_Notebook_Complete.ipynb](04_Notebooks/Lab_14_Logistic_Regression/solved/Lab_14_Colab_Notebook_Complete.ipynb) | Instructor complete reference implementation for Lab 14 |
+| **Dataset** | [student_clean_dataset.csv](04_Notebooks/Lab_14_Logistic_Regression/solved/student_clean_dataset.csv) | Clean student dataset used for exam score binary classification |
+| **Raw Assignment** | [Lab_14 Raw Question](04_Notebooks/Lab_14_Logistic_Regression/raw/) | Clean unmodified question set and reference directly from upstream GitHub |
+
+---
+
+### Module 15: Gradient Descent on Logistic Regression & Multiclass Classification
+*Derivation of the per-example and batch gradients $\nabla_\theta J(\theta) = \frac{1}{m} X^T (\hat{y} - y)$, learning rate dynamics, One-vs-Rest (OvR) multiclass decomposition, Softmax / Multinomial Logistic Regression, and Multiclass Cross-Entropy.*
+
+| Category | File | Description |
+| :--- | :--- | :--- |
+| **Worksheet** | [Worksheet_15_Gradient_Descent_and_Multiclass_Classification.pdf](02_Worksheets/Worksheet_15_Gradient_Descent_and_Multiclass_Classification.pdf) | Binary gradient derivation, batch updates, OvR decomposition, Softmax, and Multiclass Cross-Entropy |
+| **Hands-on Lab** | [Lab_14_Logistic_Student_TODO.ipynb](04_Notebooks/Lab_14_Logistic_Regression/solved/Lab_14_Logistic_Student_TODO.ipynb) | Lab 14 exercises covering batch gradient descent, OvR, and Softmax implementations |
+| **Complete Reference** | [Lab_14_Colab_Notebook_Complete.ipynb](04_Notebooks/Lab_14_Logistic_Regression/solved/Lab_14_Colab_Notebook_Complete.ipynb) | Instructor complete reference solution for gradient descent and multiclass classifiers |
 
 ---
 

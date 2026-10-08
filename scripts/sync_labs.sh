@@ -43,7 +43,8 @@ KNOWN_TOPICS = {
     10: "Feature_Selection",
     11: "PCA_Dimensionality_Reduction",
     12: "Regularization_Ridge_and_Lasso",
-    13: "Time_Series_Analysis"
+    13: "Time_Series_Analysis",
+    14: "Logistic_Regression"
 }
 
 # Scan for Lab directories in upstream (e.g. Lab_3, Lab_4, Lab_5, Lab_6, Lab_7, Lab_8, etc.)
