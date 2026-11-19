@@ -19,6 +19,7 @@ All materials are categorized into dedicated folders and cross-referenced module
 AML/
 ├── .gitignore                         # Git exclusion rules (.venv, checkpoints, pycache)
 ├── .venv/                             # Common shared Python 3.14 virtual environment
+├── requirements.txt                   # Unified dependency manifest for all course labs (unpinned)
 ├── README.md                          # Master course documentation & module guide
 ├── scripts/
 │   ├── launch_jupyter.sh              # 1-click launcher activating shared .venv & JupyterLab
@@ -55,7 +56,7 @@ AML/
 ├── 03_HTML_Visualizations/            # Interactive browser-based learning explorables
 │   ├── Module_06_Gradient_Descent_Interactive_Lecture.html
 │   └── Module_07_Momentum_and_NAG_Interactive_Worksheet.html
-├── 04_Notebooks/                      # Hands-on Jupyter lab assignments (Labs 01 to 14)
+├── 04_Notebooks/                      # Hands-on Jupyter lab assignments (Labs 01 to 19)
 │   ├── Lab_01_EDA_and_Preprocessing/
 │   │   └── Lab_01_EDA_and_Preprocessing.ipynb
 │   ├── Lab_02_Feature_Engineering_and_Outliers/
@@ -66,30 +67,26 @@ AML/
 │   │   │   ├── slr_ols_todo.py
 │   │   │   ├── student_clean_dataset.csv
 │   │   │   ├── student_raw_dataset.csv
-│   │   │   ├── requirements.txt
 │   │   │   └── README.md
 │   │   └── solved/                    # Your solved version & Jupyter checkpoints
 │   │       ├── .ipynb_checkpoints/
 │   │       ├── Lab_3_student_notebook.ipynb (24 outputs, tracking intact)
 │   │       ├── slr_ols_todo.py (your solved implementation)
 │   │       ├── student_clean_dataset.csv
-│   │       ├── student_raw_dataset.csv
-│   │       └── requirements.txt
+│   │       └── student_raw_dataset.csv
 │   ├── Lab_04_Multiple_Linear_Regression_OLS/
 │   │   ├── raw/                       # Exact question from GitHub (untouched)
 │   │   │   ├── Lab_4_student_notebook.ipynb
 │   │   │   ├── mlr_ols_todo.py
 │   │   │   ├── student_clean_dataset.csv
 │   │   │   ├── student_raw_dataset.csv
-│   │   │   ├── requirements.txt
 │   │   │   └── README.md
 │   │   └── solved/                    # Your solved version & Jupyter checkpoints
 │   │       ├── .ipynb_checkpoints/
 │   │       ├── Lab_4_student_notebook.ipynb (26 outputs, tracking intact)
 │   │       ├── mlr_ols_todo.py (your solved implementation)
 │   │       ├── student_clean_dataset.csv
-│   │       ├── student_raw_dataset.csv
-│   │       └── requirements.txt
+│   │       └── student_raw_dataset.csv
 │   ├── Lab_05_Batch_Gradient_Descent_MLR/
 │   │   ├── raw/                       # Exact question from GitHub (untouched)
 │   │   │   ├── Lab_5_Final_BGD_MLR_student_todo.ipynb
@@ -98,7 +95,6 @@ AML/
 │   │   │   ├── mlr_gradient_descent.py
 │   │   │   ├── slr_ols_student.py
 │   │   │   ├── student_clean_dataset.csv
-│   │   │   ├── requirements.txt
 │   │   │   └── README.md
 │   │   └── solved/                    # Your solved version & Jupyter checkpoints
 │   │       ├── .ipynb_checkpoints/
@@ -107,23 +103,20 @@ AML/
 │   │       ├── gradient_descent.py
 │   │       ├── mlr_gradient_descent.py (your solved implementation)
 │   │       ├── slr_ols_student.py
-│   │       ├── student_clean_dataset.csv
-│   │       └── requirements.txt
+│   │       └── student_clean_dataset.csv
 │   ├── Lab_06_MiniBatch_SGD_MLR/
 │   │   ├── raw/                       # Exact question from GitHub (untouched)
 │   │   │   ├── Lab_6_Final_BGD_MLR_student_todo.ipynb
 │   │   │   ├── mlr_gradient_descent_minibatch.py
 │   │   │   ├── dfd.png
 │   │   │   ├── student_clean_dataset.csv
-│   │   │   ├── requirements.txt
 │   │   │   └── README.md
 │   │   └── solved/                    # Your solved version & Jupyter checkpoints
 │   │       ├── .ipynb_checkpoints/
 │   │       ├── Lab_6_Final_BGD_MLR_student_todo.ipynb (16 outputs, tracking intact)
 │   │       ├── dfd.png
 │   │       ├── mlr_gradient_descent_minibatch.py (your solved implementation)
-│   │       ├── student_clean_dataset.csv
-│   │       └── requirements.txt
+│   │       └── student_clean_dataset.csv
 │   ├── Lab_07_Student_Performance_and_Placement/
 │   │   ├── raw/                       # Exact question from GitHub (untouched)
 │   │   │   ├── lab_7_St_c.ipynb
@@ -192,16 +185,40 @@ AML/
 │   │       ├── Lab_13_Colab_Notebook_Todo_Student.ipynb
 │   │       ├── Lab_13_Colab_Notebook_complete.ipynb
 │   │       └── student_clean_dataset.csv
-│   └── Lab_14_Logistic_Regression/
+│   ├── Lab_14_Logistic_Regression/
+│   │   ├── raw/                       # Exact question from GitHub (untouched)
+│   │   │   ├── Lab_14_Logistic_Student_TODO.ipynb
+│   │   │   ├── Lab_14_Colab_Notebook_Complete.ipynb
+│   │   │   └── student_clean_dataset.csv
+│   │   └── solved/                    # Ready to solve in Jupyter with tracking
+│   │       ├── .ipynb_checkpoints/
+│   │       ├── Lab_14_Logistic_Student_TODO.ipynb
+│   │       ├── Lab_14_Colab_Notebook_Complete.ipynb
+│   │       └── student_clean_dataset.csv
+│   ├── Lab_16_Decision_Trees/
+│   │   ├── raw/                       # Exact question from GitHub (untouched)
+│   │   │   └── Lab_16_Colab_Notebook_TODO.ipynb
+│   │   └── solved/                    # Ready to solve in Jupyter with tracking
+│   │       ├── .ipynb_checkpoints/
+│   │       └── Lab_16_Colab_Notebook_TODO.ipynb
+│   ├── Lab_17_Decision_Trees_Pruning/
+│   │   ├── raw/                       # Exact question from GitHub (untouched)
+│   │   │   └── Lab_17_Student_TODO_Decision_Tree.ipynb
+│   │   └── solved/                    # Ready to solve in Jupyter with tracking
+│   │       ├── .ipynb_checkpoints/
+│   │       └── Lab_17_Student_TODO_Decision_Tree.ipynb
+│   ├── Lab_18_Ensemble_Techniques/
+│   │   ├── raw/                       # Exact question from GitHub (untouched)
+│   │   │   └── Lab_18_Ensemble_Techniques_Student_TODO.ipynb
+│   │   └── solved/                    # Ready to solve in Jupyter with tracking
+│   │       ├── .ipynb_checkpoints/
+│   │       └── Lab_18_Ensemble_Techniques_Student_TODO.ipynb
+│   └── Lab_19_Boosting_Algorithms/
 │       ├── raw/                       # Exact question from GitHub (untouched)
-│       │   ├── Lab_14_Logistic_Student_TODO.ipynb
-│       │   ├── Lab_14_Colab_Notebook_Complete.ipynb
-│       │   └── student_clean_dataset.csv
+│       │   └── Lecture_19_Boosting_Lab_Student.ipynb
 │       └── solved/                    # Ready to solve in Jupyter with tracking
 │           ├── .ipynb_checkpoints/
-│           ├── Lab_14_Logistic_Student_TODO.ipynb
-│           ├── Lab_14_Colab_Notebook_Complete.ipynb
-│           └── student_clean_dataset.csv
+│           └── Lecture_19_Boosting_Lab_Student.ipynb
 └── .upstream/                         # Hidden git mirror for aml_lab (used by sync_labs.sh)
 ```
 
@@ -404,15 +421,55 @@ AML/
 
 ---
 
+### Module 16: Decision Trees — Classification & Regression
+*Non-parametric learning via recursive binary splitting: Gini Impurity, Information Gain / Shannon Entropy, Mean Squared Error (MSE) reduction criterion, best split threshold search, tree traversal, and feature importance.*
+
+| Category | File | Description |
+| :--- | :--- | :--- |
+| **Solved Notebook** | [Lab_16_Colab_Notebook_TODO.ipynb](04_Notebooks/Lab_16_Decision_Trees/solved/Lab_16_Colab_Notebook_TODO.ipynb) | Working student notebook: manual split calculation, DecisionTreeClassifier & Regressor on bike rental data |
+| **Raw Assignment** | [Lab_16 Raw Question](04_Notebooks/Lab_16_Decision_Trees/raw/) | Clean unmodified question set directly from upstream GitHub |
+
+---
+
+### Module 17: Decision Trees — Pruning & Model Selection
+*Controlling tree complexity to prevent severe overfitting: pre-pruning heuristics (`max_depth`, `min_samples_split`, `min_samples_leaf`), cost-complexity post-pruning ($\alpha$), effective $\alpha$ path computation, and GridSearchCV model selection.*
+
+| Category | File | Description |
+| :--- | :--- | :--- |
+| **Solved Notebook** | [Lab_17_Student_TODO_Decision_Tree.ipynb](04_Notebooks/Lab_17_Decision_Trees_Pruning/solved/Lab_17_Student_TODO_Decision_Tree.ipynb) | Working student notebook: cost-complexity pruning path, parameter search, and validation comparisons |
+| **Raw Assignment** | [Lab_17 Raw Question](04_Notebooks/Lab_17_Decision_Trees_Pruning/raw/) | Clean unmodified question set directly from upstream GitHub |
+
+---
+
+### Module 18: Ensemble Techniques — Voting, Bagging, Random Forests & Stacking
+*Combining diverse learners to reduce variance and improve predictive stability: Hard/Soft Voting classifiers, Bootstrap Aggregating (Bagging), Out-of-Bag (OOB) error estimation, Random Forests with feature subsampling, Extra Trees, and multi-layer Stacking.*
+
+| Category | File | Description |
+| :--- | :--- | :--- |
+| **Solved Notebook** | [Lab_18_Ensemble_Techniques_Student_TODO.ipynb](04_Notebooks/Lab_18_Ensemble_Techniques/solved/Lab_18_Ensemble_Techniques_Student_TODO.ipynb) | Working student notebook: voting, stacking, bagging, RF, Extra Trees, OOB evaluation, and UCI Rice classification |
+| **Raw Assignment** | [Lab_18 Raw Question](04_Notebooks/Lab_18_Ensemble_Techniques/raw/) | Clean unmodified question set directly from upstream GitHub |
+
+---
+
+### Module 19: Boosting Algorithms — AdaBoost, Gradient Boosting, XGBoost & CatBoost
+*Sequential ensemble learning by training consecutive models on residual errors: adaptive sample weighting (AdaBoost), functional gradient descent on pseudo-residuals (Gradient Boosting), regularized extreme gradient boosting (XGBoost), and categorical boosting (CatBoost).*
+
+| Category | File | Description |
+| :--- | :--- | :--- |
+| **Solved Notebook** | [Lecture_19_Boosting_Lab_Student.ipynb](04_Notebooks/Lab_19_Boosting_Algorithms/solved/Lecture_19_Boosting_Lab_Student.ipynb) | Working student notebook: stratified evaluation of AdaBoost, GradientBoostingClassifier, XGBoost, and CatBoost |
+| **Raw Assignment** | [Lab_19 Raw Question](04_Notebooks/Lab_19_Boosting_Algorithms/raw/) | Clean unmodified question set directly from upstream GitHub |
+
+---
+
 ## Environment & Workflow Guide
 
-### 1. Shared Virtual Environment (`.venv`) & Modular Requirements
+### 1. Shared Virtual Environment (`.venv`) & Unified Root Requirements
 All labs execute against the unified virtual environment located at `.venv/` using the registered **`Python 3 (AML Course)`** kernel (`aml-env`). 
 
-To prevent version conflicts across different assignments, **each lab folder maintains its own independent `requirements.txt`** containing only the packages needed for that specific module (e.g. `numpy`, `pandas`, `scikit-learn`, `matplotlib`, `seaborn`).
+To avoid dependency conflicts and eliminate per-module version mismatches, the repository uses a single unpinned manifest at the project root: **[requirements.txt](requirements.txt)**. It contains all core packages needed across all course assignments (`numpy`, `pandas`, `scipy`, `scikit-learn`, `matplotlib`, `seaborn`, `statsmodels`, `xgboost`, `catboost`, `ipywidgets`, etc.) without pinned versions.
 
 ### 2. Launching JupyterLab
-To start JupyterLab with the AML environment pre-configured:
+To start JupyterLab with the AML environment pre-configured (which automatically installs/syncs root `requirements.txt` into `.venv`):
 ```bash
 ./scripts/launch_jupyter.sh
 ```
@@ -425,5 +482,5 @@ When the instructor releases new assignments or questions to the GitHub reposito
 ```
 This script will:
 1. Pull the latest commits from `https://github.com/gourabrajak-cloud/aml_lab`.
-2. Automatically discover new labs (e.g. `Lab_8`, `Lab_9`, etc.).
-3. Set up the dedicated folder inside `04_Notebooks/` with datasets, instructions, starter notebooks, and the lab's specific `requirements.txt`.
+2. Automatically discover new labs (e.g. `Lab_16`, `Lab_17`, `Lab 18`, `lab_19`, etc.).
+3. Set up the dedicated folder inside `04_Notebooks/` with datasets, instructions, and starter notebooks.

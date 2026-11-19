@@ -22,9 +22,16 @@ fi
 echo "==> Activating .venv..."
 source .venv/bin/activate
 
-# 3. Register ipykernel for Jupyter notebooks
+# 3. Install packages from root requirements.txt if available
+if [ -f "requirements.txt" ]; then
+    echo "==> Ensuring dependencies from root requirements.txt are installed..."
+    pip install -r requirements.txt --quiet
+fi
+
+# 4. Register ipykernel for Jupyter notebooks
+echo "==> Registering kernel..."
 python -m ipykernel install --user --name aml-env --display-name "Python 3 (AML Course)" --quiet 2>/dev/null || true
 
-# 4. Launch Jupyter Lab
+# 5. Launch Jupyter Lab
 echo "==> Launching JupyterLab with AML kernel available..."
 exec jupyter lab

@@ -44,11 +44,15 @@ KNOWN_TOPICS = {
     11: "PCA_Dimensionality_Reduction",
     12: "Regularization_Ridge_and_Lasso",
     13: "Time_Series_Analysis",
-    14: "Logistic_Regression"
+    14: "Logistic_Regression",
+    16: "Decision_Trees",
+    17: "Decision_Trees_Pruning",
+    18: "Ensemble_Techniques",
+    19: "Boosting_Algorithms"
 }
 
-# Scan for Lab directories in upstream (e.g. Lab_3, Lab_4, Lab_5, Lab_6, Lab_7, Lab_8, etc.)
-lab_dirs = sorted([d for d in os.listdir(UPSTREAM) if re.match(r"^Lab_\d+", d, re.IGNORECASE)])
+# Scan for Lab directories in upstream (e.g. Lab_3, Lab_4, Lab 18, lab_19, etc.)
+lab_dirs = sorted([d for d in os.listdir(UPSTREAM) if re.match(r"^Lab[ _]\d+", d, re.IGNORECASE)])
 
 print(f"==> Scanning upstream labs: {', '.join(lab_dirs)}")
 
@@ -58,7 +62,7 @@ for lab in lab_dirs:
         continue
     
     # Extract lab number
-    m = re.search(r"Lab_(\d+)", lab, re.IGNORECASE)
+    m = re.search(r"Lab[ _](\d+)", lab, re.IGNORECASE)
     lab_num = int(m.group(1)) if m else 0
     lab_str = f"Lab_{lab_num:02d}"
 
@@ -108,10 +112,10 @@ for lab in lab_dirs:
     subdirs = [d for d in os.listdir(lab_src) if os.path.isdir(os.path.join(lab_src, d)) and "solved" not in d.lower()]
     raw_source_dir = os.path.join(lab_src, subdirs[0]) if subdirs else lab_src
 
-    # 1. Update raw/ with untouched files from upstream
+    # 1. Update raw/ with untouched files from upstream (skipping redundant requirements.txt)
     for f in os.listdir(raw_source_dir):
         src_file = os.path.join(raw_source_dir, f)
-        if os.path.isfile(src_file):
+        if os.path.isfile(src_file) and f != "requirements.txt":
             shutil.copy2(src_file, os.path.join(raw_dir, f))
 
     # Auto-provide student_clean_dataset.csv if notebook requires it and it's missing in upstream
